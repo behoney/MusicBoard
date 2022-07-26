@@ -7,7 +7,6 @@ export default function AudioStream() {
     const [record, setRecord] = useState(false);
     const blobRef = useRef(null);
     const [phaser, setPhaser] = useState(0);
-
     const startRecording = () => {
         setRecord(true);
     };
@@ -27,7 +26,6 @@ export default function AudioStream() {
         // console.log("chunk of real-time data is: ", recordedBlob);
         blobRef.current = recordedBlob;
         setPhaser(prev => prev + 1)
-        console.log(blobRef)
         // stopRecording()
     }
 
@@ -46,23 +44,23 @@ export default function AudioStream() {
                 onData={onData}
                 strokeColor="#000000"
                 backgroundColor="#888888"
-                channelCount={audioCtxOptions['channelCount']}    
-                bitRate={audioCtxOptions['bitRate']}       
-                sampleRate={audioCtxOptions['sampleRate']}     
-                timeSlice={audioCtxOptions['timeSlice']}       
+                channelCount={audioCtxOptions['channelCount']}   
+                bitRate={audioCtxOptions['bitRate']}        
+                sampleRate={audioCtxOptions['sampleRate']}      
+                timeSlice={audioCtxOptions['timeSlice']}        
             />
             <ReactMic
                 record={record}
                 className="sound-wave"
-                visualSetting="" 
+                visualSetting="frequencyBars" 
                 onStop={onStop}
                 onData={onData}
                 strokeColor="#000000"
                 backgroundColor="#888888"
-                channelCount={audioCtxOptions['channelCount']}     
-                bitRate={audioCtxOptions['bitRate']}          
-                sampleRate={audioCtxOptions['sampleRate']}        
-                timeSlice={audioCtxOptions['timeSlice']}       
+                channelCount={audioCtxOptions['channelCount']}   
+                bitRate={audioCtxOptions['bitRate']}        
+                sampleRate={audioCtxOptions['sampleRate']}      
+                timeSlice={audioCtxOptions['timeSlice']}        
             />
             <div>
                 <button onClick={startRecording} type="button">
@@ -72,6 +70,9 @@ export default function AudioStream() {
                     Stop
                 </button>
             </div>
+            {/* <Spectrogram blob={blobRef} phase={phaser} />
+            <div>---------------------------------------------</div> */}
+            {/* <TimeSeriesData blob={blobRef} phase={phaser} /> */}
         </div>
     );
 }
