@@ -1,0 +1,18 @@
+.time-series-container {
+  margin-top: 48px;
+  display: flex;
+  width: 100%;
+  align-items: flex-end;
+  justify-content: center;
+  overflow: hidden;
+}
+.time-series-container > .time-series-column {
+  width: 10px;
+  display: inline-block;
+  transition: all 0.15s;
+}
+
+.time-series-block {
+  border: 0.5px solid black;
+  display: block;
+}
