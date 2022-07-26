@@ -59,10 +59,10 @@ export default function AudioStream() {
                 onData={onData}
                 strokeColor="#000000"
                 backgroundColor="#888888"
-                channelCount={audioCtxOptions['channelCount']}     // defaults -> 2 (stereo).  Specify 1 for mono.
-                bitRate={audioCtxOptions['bitRate']}          // defaults -> 128000 (128kbps).  React-Mic-Gold only.
-                sampleRate={audioCtxOptions['sampleRate']}        // defaults -> 44100 (44.1 kHz).  It accepts values only in range: 22050 to 96000 (available in React-Mic-Gold)
-                timeSlice={audioCtxOptions['timeSlice']}          // defaults -> 4000 milliseconds.  The interval at which captured audio is returned to onData callback (available in React-Mic-Gold).
+                channelCount={audioCtxOptions['channelCount']}     
+                bitRate={audioCtxOptions['bitRate']}          
+                sampleRate={audioCtxOptions['sampleRate']}        
+                timeSlice={audioCtxOptions['timeSlice']}       
             />
             <div>
                 <button onClick={startRecording} type="button">
